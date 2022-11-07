@@ -1,0 +1,21 @@
+import math as mt
+
+def fun():
+    ul = input('Load units = ')
+    u1 = input('unit of depth is ')
+    Q = float(input(' Point Load, Q = '))
+    z = float(input('depth, z = '))
+    r = float(input('radial distance from center-line, r = '))
+
+    σz = (3*Q/((2*mt.pi)(z*2)))*(1/(1+(r/z)**2))**(5/2)
+    σz = round(σz, 3)
+    print('Bousinesq equation for stress,'
+                     ' at a depth z and radial distance r is given as,'
+                     ' σz = 3Q/(2*pi*z^2) * [1/(1+ (r/z)^2)]^(5/2)')
+    print(f' putting all values, σz = {σz} {ul}/{u1}2')
+fun()
+a = input('exit? y/n ')
+while a == "n":
+    fun()
+    a = input('exit? y/n ')
+exit()
